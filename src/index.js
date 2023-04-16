@@ -31,7 +31,7 @@ class Silence {
         buildCustomFooter();
         buildGithubCorner();
         buildProfile();
-        buildToolbar();
+        // buildToolbar();
         if (isPostPage()) {
             buildPostContents();
             buildPostLightbox();

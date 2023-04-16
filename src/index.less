@@ -3,6 +3,18 @@
 
 :root {
   --loading-bg-color: ##b0b0b0;
+  --blog-bg-color: #fff;
+  --text-color: #596172;
+  --border-color: #eef2f8;
+  --catalog-bg-color: #fff;
+  --panel-bg-color: #f8f8f8;
+  --code-bg-color: #f1f3f4;
+  --code-color: #bababa;
+  --pane-box-shadow: 0px 1px 15px #e6e6e6;
+  --toolbar-box-shadow: 0 2px 4px 1px #e8e8e8;
+  --loading-bg-color: #fff;
+
+  --theme-color: #5e72e4;
 }
 
 :root[mode="light"] {
@@ -81,11 +93,12 @@ html {
 }
 
 body {
+  background: #fff url('https://silence394.oss-cn-beijing.aliyuncs.com/blogs/image/ori.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
   background-size: 100%;
-  color: var(--text-color);
+  color: var(--text-color);  
   font-family: "Lato", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -495,33 +508,27 @@ a {
 }
 
 #sidebar_toptags li {
+  font-size: 14px;
+  background:  #cdecf1;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 8px;
+  border: 1px solid #000000;
+  margin: 2px 2px;
   display: inline-grid;
+  transition: all .3s;
+  border-radius: 2px;
 
   a {
-    height: 16px;
-    line-height: 16px;
-    padding: 5px 8px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 210px;
-    margin: 0 6px 6px 0;
-    display: inline-grid;
-    border-radius: 4px;
-    background-color: var(--panel-bg-color);
     color: var(--text-color);
 
     &:hover {
       transition: all 0.3s ease;
-      color: #fff;
-      background-color: var(--theme-color);
-    }
-
-    .tag-count {
-      display: none;
+      color: #5e72e4;
     }
   }
-
 }
 
 #sidebar_shortcut li,

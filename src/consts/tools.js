@@ -9,7 +9,7 @@ export function isPostPage() {
  * 显示左侧边栏。
  */
 export function showSidebar() {
-    $('.forFlow').css({ marginLeft: '260px' });
+    // $('.forFlow').css({ marginLeft: '260px' });
     $('#sideBar').show();
 }
 

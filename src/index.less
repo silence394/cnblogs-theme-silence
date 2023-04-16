@@ -81,8 +81,10 @@ html {
 }
 
 body {
-  background: var(--blog-bg-color);
-  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: 100%;
   color: var(--text-color);
   font-family: "Lato", "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
@@ -167,8 +169,8 @@ a {
 }
 
 #header {
-  width: 960px;
-  position: relative;
+  width: 85%;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -177,11 +179,17 @@ a {
   border-bottom: 1px var(--border-color) solid;
   padding-bottom: 0px;
   display: block;
-  height: 60px;
+  height: 80px;
   z-index: 999;
 }
 
 #blogTitle {
+  background: #CDECF1 url(https://silence394.oss-cn-beijing.aliyuncs.com/blogs/image/20230416215911.png) no-repeat 20px 0px ;
+  background-size: 80px 80px;
+  font-size: 36px;
+  padding-left: 120px;
+  padding-top: 10px;
+  height: 80px;
   h1 {
     font-size: 25px;
     font-weight: 600;
@@ -291,31 +299,49 @@ a {
 }
 
 #main {
-  width: 960px;
-  margin: 0 auto;
-  min-height: calc(100% - 75px);
-  padding: 15px 0px;
+  background: #fff;
+  opacity: .98;
+  width: 85%;
+  margin: auto auto;
+  min-height: calc(100% - 135px);
+  padding: 75px 10px 0 10px;
+  min-width: 950px;
+  text-align: left;
 }
 
 #mainContent {
+  padding: 0 0 10px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
   float: right;
-  margin-left: -25em;
   width: 100%;
+  margin-left: -25em;
+  min-height: 200px;
 
   .forFlow {
-    margin: 0px auto;
-    margin-left: 0px;
-    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-left: 17%;
+    max-width: 99%;
+    width: 500px;
+    min-width: 80%;
+    padding: 0;
   }
 }
 
 #sideBar {
-  width: 230px;
-  border-right: 1px solid var(--border-color);
-  font-weight: inherit;
-  display: none;
-  min-height: 750px;
-  padding: 0 15px 0 0;
+  border-right: 5px solid #eef2f8;
+  width: 15%;
+  /* margin-right: 100%; */
+  margin-left: -px;
+  font-size: inherit;
+  font-weight: 400;
+  padding-right: 0.5%;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  float: unset;
+  overflow: unset;
 
   #profile_block {
     margin: 0;
@@ -687,16 +713,19 @@ a {
   text-align: justify;
   margin-bottom: 15px;
   padding-bottom: 10px;
+  border-bottom: 1px solid #eef2f8;
 }
 
 .day .postTitle,
 .entrylist .entrylistPosttitle {
-  font-size: 19px;
+  font-size: 25px;
 }
 
 .day .postCon,
 .entrylist .entrylistPostSummary {
   font-size: 16px;
+  font-weight: 300;
+  font-family: inherit;
   padding: 10px 0;
 
   img {
@@ -709,10 +738,15 @@ a {
 
   a {
     border-bottom: 1px dotted var(--text-color);
-    padding: 2px 5px;
-    font-size: 14px;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 2px 9px;
+    font-size: 13px;
     margin-top: 10px;
+    text-decoration: none;
     display: table;
+    color: var(--text-color);
+    border-color: var(--text-color);
 
     &:after {
       content: "\00bb";
@@ -727,6 +761,10 @@ a {
 .day .postDesc,
 .entrylist .entrylistItemPostDesc {
   text-align: right;
+  font-size: 13px;
+  font-weight: 300;
+  padding-right: 0 !important;
+  color: #314659 !important;
 
   &>a {
     display: none;
@@ -740,8 +778,13 @@ a {
 
 #topics {
   .postTitle {
-    font-size: 21px;
+    font-size: 25px;
     font-weight: inherit;
+    border-bottom: 1px solid #666;
+    float: right;
+    line-height: 1.5em;
+    width: 100%;
+    clear: both;
   }
 
   .postBody {
@@ -996,6 +1039,7 @@ a {
   font-size: 13px;
   text-align: center;
   padding: 15px 0;
+  background: #CDECF1;
 }
 
 .louzhu {

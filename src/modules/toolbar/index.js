@@ -45,92 +45,92 @@ function buildToolbar() {
     $('html').attr('mode', modeLoading);
     $('html').attr('theme', themeLoading);
 
-    const $toolbar = $('.esa-toolbar');
-    const $skinPopup = $('.skin-popup');
+    // const $toolbar = $('.esa-toolbar');
+    // const $skinPopup = $('.skin-popup');
 
-    $toolbar.find('.mode').html(modeLoading == 'light' ? 'dark_mode' : 'light_mode');
+    // $toolbar.find('.mode').html(modeLoading == 'light' ? 'dark_mode' : 'light_mode');
 
-    var skinPopEl = document.getElementsByClassName('skin-popup')[0];
+    // var skinPopEl = document.getElementsByClassName('skin-popup')[0];
 
-    let show = false;
-    $toolbar.find('.bars').click(function () {
-        if (!show) {
-            $toolbar.find('.bars').addClass('bars-show');
-            $toolbar.find('.up').addClass('up-show');
-            $toolbar.find('.mode').addClass('mode-show');
-            $toolbar.find('.skin').addClass('skin-show');
-            if (showContents) {
-                $toolbar.find('.contents').addClass('contents-show');
-            }
-        } else {
-            $toolbar.find('.bars').removeClass('bars-show');
-            $toolbar.find('.up').removeClass('up-show');
-            $toolbar.find('.mode').removeClass('mode-show');
-            $toolbar.find('.skin').removeClass('skin-show');
-            if (showContents) {
-                $toolbar.find('.contents').removeClass('contents-show');
-            }
-        }
-        show = !show;
-    });
+    // let show = false;
+    // $toolbar.find('.bars').click(function () {
+    //     if (!show) {
+    //         $toolbar.find('.bars').addClass('bars-show');
+    //         $toolbar.find('.up').addClass('up-show');
+    //         $toolbar.find('.mode').addClass('mode-show');
+    //         $toolbar.find('.skin').addClass('skin-show');
+    //         if (showContents) {
+    //             $toolbar.find('.contents').addClass('contents-show');
+    //         }
+    //     } else {
+    //         $toolbar.find('.bars').removeClass('bars-show');
+    //         $toolbar.find('.up').removeClass('up-show');
+    //         $toolbar.find('.mode').removeClass('mode-show');
+    //         $toolbar.find('.skin').removeClass('skin-show');
+    //         if (showContents) {
+    //             $toolbar.find('.contents').removeClass('contents-show');
+    //         }
+    //     }
+    //     show = !show;
+    // });
 
-    $toolbar.find('.up').click(() => {
-        $('html, body').animate({ scrollTop: 0 }, 450);
-    });
+    // $toolbar.find('.up').click(() => {
+    //     $('html, body').animate({ scrollTop: 0 }, 450);
+    // });
 
-    $toolbar.find('.mode').click(function() {
-        let curMode = $('html').attr('mode');
-        let newMode = curMode == 'light' ? 'dark' : 'light';
-        sessionStorage.setItem(modeKey, newMode);
-        $(this).html(`${curMode}_mode`);
-        $('html').attr('mode', newMode);
-    });
+    // $toolbar.find('.mode').click(function() {
+    //     let curMode = $('html').attr('mode');
+    //     let newMode = curMode == 'light' ? 'dark' : 'light';
+    //     sessionStorage.setItem(modeKey, newMode);
+    //     $(this).html(`${curMode}_mode`);
+    //     $('html').attr('mode', newMode);
+    // });
 
-    $toolbar.find('.skin').click((e) => {
-        e.stopPropagation();
-        $skinPopup.slideToggle();
-    });
+    // $toolbar.find('.skin').click((e) => {
+    //     e.stopPropagation();
+    //     $skinPopup.slideToggle();
+    // });
 
-    skinPopEl.addEventListener('click', function(ev) {
-        ev.stopPropagation()
-        if (ev.target.nodeName === 'BUTTON') {
-            console.log(ev);
-            var theme = ev.target.dataset.theme;
-            sessionStorage.setItem(themeKey, theme);
-            $('html').attr('theme', theme);
-        }
-    })
+    // skinPopEl.addEventListener('click', function(ev) {
+    //     ev.stopPropagation()
+    //     if (ev.target.nodeName === 'BUTTON') {
+    //         console.log(ev);
+    //         var theme = ev.target.dataset.theme;
+    //         sessionStorage.setItem(themeKey, theme);
+    //         $('html').attr('theme', theme);
+    //     }
+    // })
 
-    document.addEventListener('click', function(ev) {
-        if (skinPopEl && skinPopEl.style.display === 'block') {
-            skinPopEl.style.display = 'none';
-        }
-    })
+    // document.addEventListener('click', function(ev) {
+    //     if (skinPopEl && skinPopEl.style.display === 'block') {
+    //         skinPopEl.style.display = 'none';
+    //     }
+    // })
 
-    let showcontents = false;
-    $toolbar.find('.contents').click(() => {
-        $('.esa-contents').toggleClass(function () {
-            if ($(this).hasClass('active')) {
-                $(this).removeClass('active');
-                return 'noactive';
-            } else {
-                $(this).removeClass('noactive');
-                return 'active';
-            }
-        });
+    // let showcontents = false;
+    // $toolbar.find('.contents').click(() => {
+    //     $('.esa-contents').toggleClass(function () {
+    //         if ($(this).hasClass('active')) {
+    //             $(this).removeClass('active');
+    //             return 'noactive';
+    //         } else {
+    //             $(this).removeClass('noactive');
+    //             return 'active';
+    //         }
+    //     });
 
-        if (!showcontents) {
-            $('#home').css({ "width": "calc(100% - 252px)"});
-            showcontents = true;
-        } else {
-            $('#home').css({ "width": "100%" });
-            showcontents = false;
-        }
-    });
+    //     if (!showcontents) {
+    //         $('#home').css({ "width": "calc(100% - 252px)"});
+    //         showcontents = true;
+    //     } else {
+    //         $('#home').css({ "width": "100%" });
+    //         showcontents = false;
+    //     }
+    // });
 
-    if (isPostPage()) {
-        $toolbar.find('.bars').trigger('click');
-    }
+    // if (isPostPage()) {
+    //     $toolbar.find('.bars').trigger('click');
+    // }
 }
 
 export default buildToolbar;
